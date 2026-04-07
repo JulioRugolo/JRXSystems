@@ -1,6 +1,6 @@
 .section {
-  padding: 4rem 0 4.5rem;
-  scroll-margin-top: 5rem;
+  padding: clamp(3rem, 7vw, 4rem) 0 calc(4.5rem + var(--safe-bottom));
+  scroll-margin-top: calc(5rem + var(--safe-top));
   background: #fff;
   border-top: 1px solid var(--border);
 }
@@ -55,13 +55,18 @@
 .field select,
 .field textarea {
   font-family: var(--font);
-  font-size: 1rem;
-  padding: 0.7rem 0.9rem;
+  font-size: max(1rem, 16px);
+  padding: 0.75rem 0.95rem;
   border-radius: 10px;
   border: 1px solid var(--border);
   background: #fff;
   color: var(--text);
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.field input,
+.field select {
+  min-height: 48px;
 }
 
 .field input:focus,
@@ -74,7 +79,7 @@
 
 .field textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: max(120px, 6rem);
 }
 
 .error {
@@ -107,11 +112,12 @@
 }
 
 .submit {
-  align-self: flex-start;
+  align-self: stretch;
   font-family: var(--font);
   font-weight: 700;
   font-size: 1rem;
-  padding: 0.85rem 1.65rem;
+  padding: 0.9rem 1.65rem;
+  min-height: 48px;
   border: none;
   border-radius: 10px;
   background: var(--orange);
@@ -121,9 +127,17 @@
   transition: background 0.2s ease, transform 0.15s ease;
 }
 
-.submit:hover:not(:disabled) {
-  background: var(--orange-hover);
-  transform: translateY(-1px);
+@media (min-width: 480px) {
+  .submit {
+    align-self: flex-start;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .submit:hover:not(:disabled) {
+    background: var(--orange-hover);
+    transform: translateY(-1px);
+  }
 }
 
 .submit:disabled {

@@ -55,7 +55,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main>
+      <main className={styles.main}>
         <section className={styles.hero}>
           <div className={`container ${styles.heroInner}`}>
             <p className={styles.eyebrow}>Software sob medida · SaaS em produção</p>

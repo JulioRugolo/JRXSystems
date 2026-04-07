@@ -1,16 +1,26 @@
 .footer {
   border-top: 1px solid var(--border);
-  padding: 2.75rem 0;
+  padding: clamp(2rem, 5vw, 2.75rem) 0 calc(2.75rem + var(--safe-bottom));
   margin-top: 0;
   background: linear-gradient(180deg, var(--bg-subtle) 0%, #f1f5f9 100%);
 }
 
 .inner {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1.75rem;
+  justify-content: flex-start;
   align-items: flex-start;
+}
+
+@media (min-width: 640px) {
+  .inner {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+  }
 }
 
 .inner strong {

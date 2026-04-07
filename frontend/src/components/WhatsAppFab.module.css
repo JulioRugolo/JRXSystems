@@ -1,10 +1,12 @@
 .fab {
   position: fixed;
-  bottom: 1.25rem;
-  right: 1.25rem;
+  bottom: calc(1.25rem + var(--safe-bottom));
+  right: calc(1.25rem + var(--safe-right));
   z-index: 60;
   width: 3.5rem;
   height: 3.5rem;
+  min-width: 3.5rem;
+  min-height: 3.5rem;
   border-radius: 50%;
   background: #25d366;
   color: #fff;
@@ -16,9 +18,11 @@
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.fab:hover {
-  transform: scale(1.06);
-  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.55);
-  text-decoration: none;
-  color: #fff;
+@media (hover: hover) and (pointer: fine) {
+  .fab:hover {
+    transform: scale(1.06);
+    box-shadow: 0 12px 28px rgba(37, 211, 102, 0.55);
+    text-decoration: none;
+    color: #fff;
+  }
 }

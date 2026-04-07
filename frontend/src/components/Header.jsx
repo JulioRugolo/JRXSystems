@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useId, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import { COMPANY } from '../constants.js';
 import styles from './Header.module.css';
@@ -31,7 +32,7 @@ export default function Header() {
 
   useEffect(() => {
     const onResize = () => {
-      if (window.innerWidth >= 768) closeMenu();
+      if (window.innerWidth >= 1024) closeMenu();
     };
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
@@ -81,42 +82,45 @@ export default function Header() {
         </button>
       </div>
 
-      {menuOpen ? (
-        <div className={styles.mobileLayer} role="presentation">
-          <button
-            type="button"
-            className={styles.overlay}
-            aria-label="Fechar menu"
-            onClick={closeMenu}
-          />
-          <div
-            id={menuId}
-            className={styles.drawer}
-            role="dialog"
-            aria-modal="true"
-            aria-label="Menu de navegação"
-          >
-            <div className={styles.drawerHeader}>
-              <span className={styles.drawerTitle}>Menu</span>
+      {menuOpen
+        ? createPortal(
+            <div className={styles.mobileLayer} role="presentation">
               <button
                 type="button"
-                className={styles.closeButton}
+                className={styles.overlay}
+                aria-label="Fechar menu"
                 onClick={closeMenu}
-                aria-label="Fechar"
+              />
+              <div
+                id={menuId}
+                className={styles.drawer}
+                role="dialog"
+                aria-modal="true"
+                aria-label="Menu de navegação"
               >
-                <span aria-hidden="true">×</span>
-              </button>
-            </div>
-            <nav className={styles.navMobile} aria-label="Principal">
-              {NAV_LINKS.map(({ href, label }) => (
-                <a key={href} href={href} onClick={handleNavClick}>
-                  {label}
-                </a>
-              ))}
-            </nav>
-          </div>
-        </div>
-      ) : null}
+                <div className={styles.drawerHeader}>
+                  <span className={styles.drawerTitle}>Menu</span>
+                  <button
+                    type="button"
+                    className={styles.closeButton}
+                    onClick={closeMenu}
+                    aria-label="Fechar"
+                  >
+                    <span aria-hidden="true">×</span>
+                  </button>
+                </div>
+                <nav className={styles.navMobile} aria-label="Principal">
+                  {NAV_LINKS.map(({ href, label }) => (
+                    <a key={href} href={href} onClick={handleNavClick}>
+                      {label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+            </div>,
+            document.body
+          )
+        : null}
     </header>
   );
 }

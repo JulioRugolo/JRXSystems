@@ -14,10 +14,12 @@
   transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.2s ease;
 }
 
-.card:hover {
-  box-shadow: 0 12px 40px rgba(12, 35, 64, 0.1);
-  transform: translateY(-3px);
-  border-color: var(--border-strong);
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    box-shadow: 0 12px 40px rgba(12, 35, 64, 0.1);
+    transform: translateY(-3px);
+    border-color: var(--border-strong);
+  }
 }
 
 .card::before {
@@ -448,19 +450,21 @@
   transition: background 0.2s ease, transform 0.15s ease;
 }
 
-.cta:hover {
-  background: var(--orange-hover);
-  text-decoration: none;
-  color: #fff;
-  transform: translateX(2px);
-}
-
 .ctaArrow {
   transition: transform 0.2s ease;
 }
 
-.cta:hover .ctaArrow {
-  transform: translateX(3px);
+@media (hover: hover) and (pointer: fine) {
+  .cta:hover {
+    background: var(--orange-hover);
+    text-decoration: none;
+    color: #fff;
+    transform: translateX(2px);
+  }
+
+  .cta:hover .ctaArrow {
+    transform: translateX(3px);
+  }
 }
 
 .badge {
