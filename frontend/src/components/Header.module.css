@@ -1,0 +1,108 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 5.25rem;
+  gap: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  color: var(--text);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.brand:hover {
+  text-decoration: none;
+  color: var(--text);
+}
+
+/* Logo PNG com transparência (logo2) — sem clip-path */
+.logoShell {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.logo {
+  display: block;
+  height: 58px;
+  width: auto;
+  max-width: min(380px, 85vw);
+  object-fit: contain;
+  object-position: left center;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+}
+
+.nav {
+  display: flex;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.nav a {
+  color: var(--systems-grey);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--teal), var(--teal-light));
+  transition: width 0.2s ease;
+}
+
+.nav a:hover {
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    min-height: 6rem;
+  }
+
+  .logo {
+    height: 88px;
+    max-width: min(560px, 52vw);
+  }
+}
+
+@media (max-width: 640px) {
+  .logo {
+    height: 48px;
+    max-width: min(280px, 78vw);
+  }
+
+  .nav {
+    gap: 1rem;
+  }
+}

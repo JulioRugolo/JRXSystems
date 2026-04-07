@@ -1,0 +1,474 @@
+/* Base card */
+.card {
+  --card-teal: var(--teal);
+  --card-teal-soft: var(--teal-soft);
+  --card-navy-tint: rgba(12, 35, 64, 0.04);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 12px 40px rgba(12, 35, 64, 0.1);
+  transform: translateY(-3px);
+  border-color: var(--border-strong);
+}
+
+.card::before {
+  content: '';
+  display: block;
+  height: 4px;
+  background: linear-gradient(90deg, var(--navy), var(--teal-light));
+}
+
+.card[data-variant='jjtech']::before {
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+}
+
+.card[data-variant='vagaprime']::before {
+  background: linear-gradient(90deg, #7c3aed, #a78bfa);
+}
+
+.card[data-variant='torres-veiculos']::before {
+  background: linear-gradient(90deg, var(--navy), var(--teal));
+}
+
+.card[data-variant='3dideas-erp']::before {
+  background: linear-gradient(90deg, #ea580c, #fbbf24);
+}
+
+.card[data-variant='sistema-agendamento']::before {
+  background: linear-gradient(90deg, #0f766e, #2dd4bf);
+}
+
+.card[data-variant='sistema-contas']::before {
+  background: linear-gradient(90deg, #0369a1, #38bdf8);
+}
+
+.card[data-variant='generic']::before {
+  background: linear-gradient(90deg, var(--navy-mid), var(--teal-light));
+}
+
+/* Mini “app” preview */
+.mock {
+  padding: 0.65rem 0.75rem 0.85rem;
+  background: linear-gradient(165deg, var(--card-navy-tint), var(--bg-subtle));
+  border-bottom: 1px solid var(--border);
+  min-height: 132px;
+}
+
+.mockTop {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 0.55rem;
+}
+
+.mockDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--border-strong);
+}
+
+.mockDot:first-child {
+  background: #f87171;
+}
+
+.mockDot:nth-child(2) {
+  background: #fbbf24;
+}
+
+.mockDot:nth-child(3) {
+  background: #4ade80;
+}
+
+/* JJ Tech — painel + lista */
+.mockJjBody {
+  display: flex;
+  gap: 6px;
+  height: 88px;
+}
+
+.mockJjSide {
+  width: 22%;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.mockJjMain {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mockJjCard {
+  height: 28px;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  border-radius: 6px;
+  opacity: 0.85;
+}
+
+.mockJjRows {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+}
+
+/* VagaPrime — kanban */
+.mockVp {
+  display: flex;
+  gap: 5px;
+  height: 88px;
+}
+
+.mockVpCol {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.mockVpTag {
+  height: 6px;
+  width: 55%;
+  border-radius: 3px;
+  background: #c4b5fd;
+}
+
+.mockVpTagMid {
+  background: #a78bfa;
+  width: 70%;
+}
+
+.mockVpTagEnd {
+  background: #7c3aed;
+  width: 60%;
+}
+
+.mockVpCard {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #e9d5ff;
+  border-radius: 5px;
+  min-height: 18px;
+}
+
+/* Torres — vitrine */
+.mockTv {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 88px;
+}
+
+.mockTvHero {
+  height: 36px;
+  border-radius: 6px;
+  background: linear-gradient(105deg, var(--navy) 0%, var(--navy-mid) 50%, var(--teal) 100%);
+  opacity: 0.9;
+}
+
+.mockTvGrid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.mockTvThumb {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  min-height: 0;
+}
+
+/* 3DIdeas — camadas */
+.mock3d {
+  position: relative;
+  height: 88px;
+}
+
+.mock3dLayer {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  height: 22px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.mock3dLayer:nth-child(1) {
+  top: 6px;
+  background: linear-gradient(90deg, #fff7ed, #ffedd5);
+  border-color: #fed7aa;
+}
+
+.mock3dLayer:nth-child(2) {
+  top: 32px;
+  left: 12%;
+  right: 12%;
+  background: #fff;
+}
+
+.mock3dLayer:nth-child(3) {
+  top: 58px;
+  left: 16%;
+  right: 16%;
+  background: #f8fafc;
+}
+
+.mock3dStats {
+  position: absolute;
+  bottom: 4px;
+  right: 10%;
+  display: flex;
+  gap: 4px;
+}
+
+.mockPill {
+  width: 28px;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--orange);
+  opacity: 0.85;
+}
+
+.mockPill:last-child {
+  background: var(--teal);
+}
+
+/* Agenda */
+.mockAg {
+  display: flex;
+  gap: 6px;
+  height: 88px;
+}
+
+.mockAgCal {
+  flex: 1.2;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 5px;
+}
+
+.mockAgCell {
+  aspect-ratio: 1;
+  border-radius: 3px;
+  background: var(--bg-muted);
+}
+
+.mockAgCellOn {
+  background: linear-gradient(135deg, var(--teal-soft), #99f6e4);
+  border: 1px solid var(--teal-light);
+}
+
+.mockAgSide {
+  flex: 0.65;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mockAgSlot {
+  flex: 1;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  border-left: 3px solid var(--teal);
+}
+
+/* Contas */
+.mockSc {
+  display: flex;
+  gap: 6px;
+  height: 88px;
+}
+
+.mockScChart {
+  width: 38%;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 5px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 3px;
+}
+
+.mockScBar {
+  flex: 1;
+  background: linear-gradient(180deg, #38bdf8, #0ea5e9);
+  border-radius: 2px 2px 0 0;
+  min-height: 8px;
+}
+
+.mockScList {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+.mockLine {
+  height: 5px;
+  border-radius: 3px;
+  background: var(--border-strong);
+  opacity: 0.5;
+}
+
+.mockLineShort {
+  width: 58%;
+}
+
+.mockRow {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--border-strong);
+  opacity: 0.55;
+}
+
+.mockRowShort {
+  width: 65%;
+}
+
+.mockGeneric {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  height: 88px;
+  padding: 0 4px;
+}
+
+/* Card body */
+.cardBody {
+  padding: 1.35rem 1.35rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  flex: 1;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--navy);
+  line-height: 1.25;
+}
+
+.summary {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+.insight {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--systems-grey);
+  padding-top: 0.15rem;
+  border-top: 1px dashed var(--border);
+}
+
+.stackWrap {
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.stackLabel {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--teal);
+  margin-bottom: 0.25rem;
+}
+
+.stack {
+  margin: 0;
+  font-size: 0.78rem;
+  font-family: var(--mono);
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.cardFooter {
+  padding-top: 1rem;
+  margin-top: 0.25rem;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #fff;
+  background: var(--orange);
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.25);
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.cta:hover {
+  background: var(--orange-hover);
+  text-decoration: none;
+  color: #fff;
+  transform: translateX(2px);
+}
+
+.ctaArrow {
+  transition: transform 0.2s ease;
+}
+
+.cta:hover .ctaArrow {
+  transform: translateX(3px);
+}
+
+.badge {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  padding: 0.45rem 0.75rem;
+  background: var(--bg-muted);
+  border-radius: 8px;
+  display: inline-block;
+}

@@ -1,0 +1,40 @@
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 2.75rem 0;
+  margin-top: 0;
+  background: linear-gradient(180deg, var(--bg-subtle) 0%, #f1f5f9 100%);
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.inner strong {
+  font-size: 1.05rem;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+}
+
+.meta {
+  margin: 0.6rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.meta a {
+  color: var(--teal);
+  font-weight: 600;
+}
+
+.copy {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  max-width: 22rem;
+  line-height: 1.55;
+}
