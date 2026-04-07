@@ -65,17 +65,39 @@ function runMigrations() {
   console.log('[db] Migrations aplicadas.');
 }
 
+function runSeeders() {
+  const skip =
+    process.env.SKIP_DB_SEED === '1' ||
+    process.env.SKIP_DB_SEED === 'true';
+  if (skip) {
+    console.log('[db] SKIP_DB_SEED ativo — seeders não rodaram no start.');
+    return;
+  }
+
+  const backendRoot = path.join(__dirname, '..', '..');
+  const cliPath = require.resolve('sequelize-cli/lib/sequelize');
+  console.log('[db] Executando seeders...');
+  execFileSync(process.execPath, [cliPath, 'db:seed:all'], {
+    cwd: backendRoot,
+    stdio: 'inherit',
+    env: process.env,
+  });
+  console.log('[db] Seeders aplicados.');
+}
+
 /**
- * Ordem: garantir banco → autenticar Sequelize → sequelize-cli db:migrate (tabelas).
+ * Ordem: garantir banco → autenticar Sequelize → sequelize-cli db:migrate (tabelas) → seeders (dados iniciais).
  */
 async function prepareDatabase(sequelize) {
   await ensureDatabaseExists();
   await sequelize.authenticate();
   runMigrations();
+  runSeeders();
 }
 
 module.exports = {
   prepareDatabase,
   ensureDatabaseExists,
   runMigrations,
+  runSeeders,
 };
