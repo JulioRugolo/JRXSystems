@@ -33,7 +33,7 @@ function getMysqlBase() {
         ? process.env.MYSQLPASSWORD
         : (parsed?.password ?? '');
   const database =
-    process.env.DB_NAME || process.env.MYSQLDATABASE || parsed?.database || 'jrxsystems';
+    process.env.DB_NAME || process.env.MYSQLDATABASE || parsed?.database || 'jrxsistemas';
   const host =
     process.env.DB_HOST || process.env.MYSQLHOST || parsed?.host || '127.0.0.1';
   const port = Number(

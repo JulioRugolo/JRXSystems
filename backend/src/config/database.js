@@ -14,7 +14,7 @@ module.exports = {
   },
   test: {
     ...withDialect({
-      database: process.env.DB_NAME || 'jrxsystems_test',
+      database: process.env.DB_NAME || 'jrxsistemas_test',
     }),
     logging: false,
   },

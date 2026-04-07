@@ -1,4 +1,4 @@
-# JRX Systems — site institucional
+# JRX Sistemas — site institucional
 
 Monorepo com **API Node.js + Express + Sequelize + MySQL** (arquitetura MSC) e **frontend React + Vite**. A vitrine de produtos vem do banco: apenas registros com `active = true` na tabela `projects` são expostos em `GET /api/projects`. O formulário de contato grava em `contact_messages`.
 
@@ -44,7 +44,7 @@ npm run dev
 
 A API escuta em `http://localhost:3001` (ou `PORT` do `.env`).
 
-> Se preferir criar o banco manualmente, pode continuar usando `CREATE DATABASE jrxsystems ...` no MySQL; o passo automático apenas evita esse passo quando há permissão.
+> Se preferir criar o banco manualmente, pode continuar usando `CREATE DATABASE jrxsistemas ...` no MySQL; o passo automático apenas evita esse passo quando há permissão.
 
 ## Frontend (local)
 
@@ -79,7 +79,7 @@ Padrão alinhado aos outros monorepos (`DB_*`, `NODE_ENV`, `PORT`, URLs de front
 
 | Variável         | Descrição |
 |------------------|-----------|
-| `VITE_API_URL`   | URL pública da API **sem** barra final (ex.: `https://jrxsystems-api.up.railway.app`) |
+| `VITE_API_URL`   | URL pública da API **sem** barra final (ex.: `https://jrxsistemas-api.up.railway.app`) |
 
 ## Deploy no Railway
 
