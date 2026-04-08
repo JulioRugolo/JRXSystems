@@ -21,7 +21,7 @@ export default function Home() {
         if (!cancelled) setProjects(Array.isArray(data) ? data : []);
       } catch {
         if (!cancelled) {
-          setLoadError('Não foi possível carregar os produtos. Tente atualizar a página.');
+          setLoadError('Não foi possível carregar as soluções. Atualize a página ou fale conosco pelo WhatsApp.');
         }
       } finally {
         if (!cancelled) setLoading(false);
@@ -58,19 +58,19 @@ export default function Home() {
       <main className={styles.main}>
         <section className={styles.hero}>
           <div className={`container ${styles.heroInner}`}>
-            <p className={styles.eyebrow}>Software sob medida · SaaS em produção</p>
+            <p className={styles.eyebrow}>Soluções que já rodam no mercado · projetos sob medida</p>
             <h1 className={styles.heroTitle}>
-              Tecnologia de ponta a ponta para empresas que precisam escalar com segurança
+              Menos planilha e retrabalho; mais controle, vendas e tempo para o que importa
             </h1>
             <p className={styles.heroText}>
-              A <strong>{COMPANY.name}</strong> projeta, desenvolve e mantém aplicações web completas — da API ao
-              que seu cliente vê no navegador ou no celular. Trabalhamos com arquitetura sólida (Node.js, bancos
-              relacionais, integrações como <strong>Stripe</strong> para assinaturas) e entregamos produtos que já
-              operam no mercado, além de projetos exclusivos sob demanda.
+              Se o seu negócio perde pedido no WhatsApp, não sabe o que cobrar no fim do mês ou trava porque cada
+              área usa uma planilha diferente, a <strong>{COMPANY.name}</strong> entrega sistemas web pensados para o
+              dia a dia — no computador e no celular. Você pode contratar um dos nossos produtos (com planos no próprio
+              site de cada um) ou pedir algo feito sob medida para o seu processo.
             </p>
             <div className={styles.heroActions}>
               <a href="#produtos" className={styles.btnPrimary}>
-                Conheça os produtos
+                Ver soluções
               </a>
               <a href={COMPANY.whatsappUrl} className={styles.btnGhost} target="_blank" rel="noreferrer">
                 Falar no WhatsApp
@@ -85,35 +85,35 @@ export default function Home() {
               <div>
                 <h2 className={styles.aboutTitle}>Quem somos</h2>
                 <p className={styles.aboutText}>
-                  Somos uma empresa especializada em <strong>desenvolvimento de software</strong> e em produtos no
-                  modelo <strong>SaaS</strong>. Nosso foco é resolver problemas reais de operação, vendas e atendimento
-                  com sistemas estáveis, rápidos e fáceis de usar — sem atalhos que comprometam segurança ou
-                  manutenção no longo prazo.
+                  A <strong>{COMPANY.name}</strong> existe para tirar do seu colo o peso de organizar processo, equipe e
+                  cliente no improviso. Criamos e mantemos sistemas online que equipes reais usam todos os dias — com
+                  foco em clareza, velocidade e segurança, para você não depender de gambiarra nem de “aquela planilha
+                  que só uma pessoa sabe mexer”.
                 </p>
                 <p className={styles.aboutText}>
-                  Atendemos negócios que precisam de <strong>presença digital profissional</strong>, automação de
-                  processos e integração com meios de pagamento. Cada solução listada neste site é um produto com
-                  histórico em produção; para necessidades novas, montamos escopo, prazos e proposta alinhados ao seu
-                  orçamento e prioridades.
+                  Ajudamos quem precisa de <strong>site e operação alinhados</strong>, de <strong>vendas e atendimento
+                  mais previsíveis</strong> e de <strong>pagamentos e assinaturas organizados</strong>. O que você vê
+                  abaixo são produtos que já estão no ar; quando o seu desafio é único, montamos escopo, prazo e
+                  investimento juntos com você.
                 </p>
               </div>
               <aside className={styles.aboutAside} aria-label="Resumo institucional">
                 <ul className={styles.aboutList}>
                   <li>
                     <strong>Missão</strong>
-                    <span>Entregar software confiável que simplifique o dia a dia de empresas e equipes.</span>
+                    <span>Colocar ordem no caos operacional: menos erro manual, mais previsibilidade para você crescer.</span>
                   </li>
                   <li>
-                    <strong>Como atuamos</strong>
-                    <span>Do levantamento de requisitos ao deploy, com código versionado, testes e documentação.</span>
+                    <strong>Como trabalhamos</strong>
+                    <span>Ouvimos o problema primeiro, desenhamos o caminho com você e entregamos em etapas claras — sem surpresa no fim.</span>
                   </li>
                   <li>
-                    <strong>SaaS</strong>
-                    <span>Produtos com planos próprios e cobrança via Stripe, evoluindo com feedback dos clientes.</span>
+                    <strong>Produtos prontos</strong>
+                    <span>Soluções com planos no próprio site de cada sistema; você escolhe o que encaixa e contrata ali.</span>
                   </li>
                   <li>
-                    <strong>Projetos sob medida</strong>
-                    <span>Desenvolvimento dedicado quando o seu processo exige algo que ainda não existe pronto.</span>
+                    <strong>Sob medida</strong>
+                    <span>Quando nada pronto resolve 100% do seu processo, construímos o que falta, alinhado ao seu ritmo e orçamento.</span>
                   </li>
                 </ul>
               </aside>
@@ -124,41 +124,41 @@ export default function Home() {
         <section className={styles.pillars} aria-labelledby="pillars-heading">
           <div className="container">
             <h2 id="pillars-heading" className={styles.pillarsTitle}>
-              O que você encontra ao trabalhar conosco
+              Por que falar com a gente antes de comprar outra ferramenta genérica
             </h2>
             <p className={styles.pillarsLead}>
-              Uma abordagem corporativa: transparência técnica, responsabilidade com dados e interfaces pensadas para
-              quem usa o sistema todos os dias.
+              Você não precisa entender termos de TI — precisa de resultado no caixa, no atendimento e na equipe. É
+              nisso que nos apoiamos.
             </p>
             <div className={styles.pillarGrid}>
               <article className={styles.pillar}>
                 <div className={styles.pillarIcon} aria-hidden="true">
                   ⚙
                 </div>
-                <h3>Engenharia sólida</h3>
+                <h3>Confiança para operar</h3>
                 <p>
-                  Backends em Node.js, modelagem de dados com ORM, migrations e ambientes separados para desenvolvimento
-                  e produção — o mesmo rigor que você veria em times de produto maduros.
+                  Sistemas estáveis, preparados para muitos acessos ao mesmo tempo e com dados organizados — para você
+                  parar de apagar incêndio e passar a acompanhar o que acontece no negócio.
                 </p>
               </article>
               <article className={styles.pillar}>
                 <div className={styles.pillarIcon} aria-hidden="true">
                   ◎
                 </div>
-                <h3>Experiência do usuário</h3>
+                <h3>Fácil de usar no dia a dia</h3>
                 <p>
-                  Interfaces responsivas, foco em mobile quando o negócio exige campo ou cliente final no celular, e
-                  textos claros para reduzir treinamento e suporte.
+                  Telas claras no computador e no celular, pensadas para quem vende, atende ou produz — não só para o
+                  “pessoal de informática”. Menos treino, menos ligação pedindo ajuda.
                 </p>
               </article>
               <article className={styles.pillar}>
                 <div className={styles.pillarIcon} aria-hidden="true">
                   ✓
                 </div>
-                <h3>Operação e crescimento</h3>
+                <h3>Pronto para crescer com você</h3>
                 <p>
-                  Integração com pagamentos, multi-tenant quando aplicável e visão de produto: métricas, evolução contínua
-                  e preparação para escalar uso e faturamento.
+                  Cobrança recorrente e pagamentos quando o modelo do seu negócio pede; evolução contínua conforme a
+                  demanda aumenta — sem travar na primeira temporada forte de vendas.
                 </p>
               </article>
             </div>
@@ -167,20 +167,19 @@ export default function Home() {
 
         <section id="produtos" className={styles.section}>
           <div className="container">
-            <h2 className={styles.sectionTitle}>Produtos e sistemas em operação</h2>
+            <h2 className={styles.sectionTitle}>Soluções que já estão em uso</h2>
             <p className={styles.sectionLead}>
-              Abaixo estão algumas das soluções que já estão no ar. Cada uma é um <strong>SaaS</strong> com{' '}
-              <strong>planos e assinaturas próprios via Stripe</strong>: o valor e a contratação são tratados dentro do
-              próprio produto. Este site não substitui o checkout de cada sistema — aqui você conhece o portfólio e, se
-              precisar de algo novo, usa o formulário de contato.
+              Abaixo estão sistemas que já rodam com clientes reais. Em cada um, <strong>valor e contratação</strong>{' '}
+              ficam no próprio site do produto — aqui você só conhece o que fazemos e decide qual conversa vale a pena.
+              Se nada da lista resolver o seu caso, fale com a gente: desenvolvemos sob medida.
             </p>
 
             {loading ? (
-              <p className={styles.hint}>Carregando produtos…</p>
+              <p className={styles.hint}>Carregando soluções…</p>
             ) : loadError ? (
               <p className={styles.errorBox}>{loadError}</p>
             ) : projects.length === 0 ? (
-              <p className={styles.hint}>Nenhum produto ativo no momento. Volte em breve.</p>
+              <p className={styles.hint}>Nenhuma solução ativa no momento. Volte em breve ou fale conosco.</p>
             ) : (
               <ul className={styles.grid}>
                 {projects.map((p) => (
@@ -197,31 +196,29 @@ export default function Home() {
           <div className="container">
             <h2 className={styles.sectionTitle}>Como funciona na prática</h2>
             <p className={styles.sectionLead}>
-              Deixamos explícito o que é produto pronto e o que é desenvolvimento customizado, para você saber por onde
-              começar.
+              Três caminhos simples — você escolhe o que combina com o momento do seu negócio.
             </p>
             <div className={styles.howGrid}>
               <article className={styles.howCard}>
-                <h3>Assinatura de um SaaS existente</h3>
+                <h3>Contratar um sistema pronto</h3>
                 <p>
-                  Você escolhe o sistema que melhor encaixa no seu segmento, acessa o site do produto e contrata o plano
-                  por lá. O pagamento recorrente e upgrades são geridos pelo próprio aplicativo (Stripe). Nossa equipe
-                  acompanha evoluções e suporte conforme cada produto.
+                  Achou algo na lista que resolve seu segmento? Entre no site do produto, veja os planos e feche por lá.
+                  Assim você já sabe investimento e o que está incluso, sem depender deste site para pagamento.
                 </p>
               </article>
               <article className={styles.howCard}>
-                <h3>Desenvolvimento sob medida</h3>
+                <h3>Pedir um projeto sob medida</h3>
                 <p>
-                  Quando você precisa de integrações específicas, regras de negócio únicas ou um MVP para validar ideia,
-                  use a seção de contato. Descreva objetivo, prazo desejado e orçamento aproximado: retornamos com
-                  proposta e próximos passos.
+                  Precisa integrar com outro sistema, seguir uma regra de negócio bem específica ou testar uma ideia nova?
+                  Use o formulário abaixo: conte o objetivo, o prazo que imagina e uma faixa de investimento. Voltamos
+                  com proposta clara.
                 </p>
               </article>
               <article className={styles.howCard}>
-                <h3>Contato direto</h3>
+                <h3>Falar direto</h3>
                 <p>
-                  Para dúvidas rápidas ou parcerias, o WhatsApp corporativo também está disponível. Use o botão flutuante
-                  ou o telefone no rodapé — estamos no mesmo fuso e falamos com quem decide técnica ou negócio.
+                  Prefere conversa rápida? Chame no WhatsApp pelo botão flutuante ou pelo número no rodapé — atendemos
+                  quem cuida da operação e quem decide investimento, no mesmo horário de Brasília.
                 </p>
               </article>
             </div>

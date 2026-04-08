@@ -11,8 +11,8 @@ module.exports = {
           slug: 'jjtech',
           title: 'JJ Tech',
           summary:
-            'Sistema para oficina mecânica: orçamentos em PWA (mobile first), geração de PDF e gestão de clientes, veículos e peças.',
-          stack: 'React, Vite, PWA, Node.js, Express, Sequelize, MySQL',
+            'Para oficinas que cansaram de papel e planilha: orçamentos no celular, histórico por veículo e peças organizadas — o cliente acompanha tudo com clareza.',
+          stack: 'Acesso pelo celular e pelo computador; tudo centralizado para a equipe.',
           url: null,
           display_order: 10,
           active: true,
@@ -23,8 +23,8 @@ module.exports = {
           slug: 'vagaprime',
           title: 'VagaPrime',
           summary:
-            'Candidaturas a vagas com formulário público multi-step, área administrativa e CRM com pipeline.',
-          stack: 'React, Vite, Node.js, Express, MySQL',
+            'Para empresas que recebem muitos currículos: o candidato entra por um fluxo simples e você acompanha cada etapa em um painel — sem perder gente boa no meio do e-mail.',
+          stack: 'Triagem organizada para o time de RH; menos caos, mais agilidade.',
           url: 'http://vagaprime.com.br',
           display_order: 20,
           active: true,
@@ -35,8 +35,8 @@ module.exports = {
           slug: 'torres-veiculos',
           title: 'Torres Veículos',
           summary:
-            'Vitrine pública com filtros e painel administrativo para estoque de veículos e fotos. PWA instalável.',
-          stack: 'React, TypeScript, Vite, PWA, Node.js, Express, Sequelize, MySQL',
+            'Para lojas de veículos: vitrine com busca, fotos em destaque e painel para atualizar estoque quando precisar — sem depender de terceiros a cada mudança.',
+          stack: 'Site rápido no celular; equipe comercial altera ofertas com autonomia.',
           url: 'https://www.torresveiculos.com.br',
           display_order: 30,
           active: true,
@@ -47,8 +47,8 @@ module.exports = {
           slug: '3dideas-erp',
           title: '3DIdeas ERP',
           summary:
-            'Gestão para impressão 3D: produção, vendas, financeiro e estoque.',
-          stack: 'Full stack (detalhes no repositório do produto)',
+            'Para quem vive de impressão 3D e precisa de números confiáveis: pedidos, fila de produção, materiais e finanças reunidos — menos planilha solta, mais margem visível.',
+          stack: 'Visão da produção e do caixa no mesmo lugar; decisões com base real.',
           url: 'http://3dideas.com.br',
           display_order: 40,
           active: true,
@@ -59,8 +59,8 @@ module.exports = {
           slug: 'sistema-agendamento',
           title: 'Sistema de Agendamento',
           summary:
-            'Agendamentos com foco mobile e PWA, backend com integrações de pagamento.',
-          stack: 'React, TypeScript, Vite, PWA, Node.js, Express, Sequelize, MySQL',
+            'Para quem vende horário — salões, clínicas, consultorias: agenda online, lembretes e cobrança alinhada ao fluxo do cliente.',
+          stack: 'Cliente marca pelo celular; você reduz faltas e organiza a agenda.',
           url: null,
           display_order: 50,
           active: true,
@@ -70,8 +70,9 @@ module.exports = {
         {
           slug: 'sistema-contas',
           title: 'Sistema de Contas',
-          summary: 'Controle financeiro pessoal com API segura e interface web.',
-          stack: 'React, Vite, Node.js, Express, Sequelize, MySQL',
+          summary:
+            'Para organizar o financeiro pessoal sem complicar: entradas, saídas, metas e visão mensal em uma tela direta — com privacidade e segurança.',
+          stack: 'Interface objetiva; seus dados acessíveis com proteção por trás.',
           url: null,
           display_order: 60,
           active: true,

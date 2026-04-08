@@ -12,6 +12,9 @@ if (process.env.NODE_ENV === 'production') {
 
 app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
 
+/** Sempre liberamos o site oficial (evita falha de CORS se o .env não listar o domínio com www). */
+const PRODUCTION_SITE_ORIGIN = 'https://www.jrxsistemas.com.br';
+
 const corsOrigins = () => {
   const raw =
     process.env.FRONTEND_ORIGIN ||
@@ -22,10 +25,11 @@ const corsOrigins = () => {
   if (!raw.trim()) {
     return true;
   }
-  return raw
+  const fromEnv = raw
     .split(',')
     .map((s) => s.trim())
     .filter(Boolean);
+  return [...new Set([PRODUCTION_SITE_ORIGIN, ...fromEnv])];
 };
 
 app.use(

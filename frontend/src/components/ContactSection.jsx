@@ -61,11 +61,11 @@ export default function ContactSection({ projectTitles = [] }) {
   return (
     <section id="contato" className={styles.section}>
       <div className="container">
-        <h2 className={styles.heading}>Contratar desenvolvimento</h2>
+        <h2 className={styles.heading}>Pedir orçamento ou projeto sob medida</h2>
         <p className={styles.lead}>
-          Preencha os dados e envie: registramos no sistema e abrimos o <strong>WhatsApp</strong> com a
-          mensagem pronta para você concluir o envio. Os produtos acima são <strong>SaaS</strong> com{' '}
-          <strong>planos via Stripe</strong>; aqui o foco é <strong>desenvolvimento sob medida</strong>.
+          Conte o que você precisa: guardamos sua solicitação e abrimos o <strong>WhatsApp</strong> com o texto
+          pronto — é só enviar. Se você quer apenas assinar um dos sistemas da lista, o contrato e o pagamento ficam no
+          site de cada solução; <strong>este formulário é para algo novo ou personalizado</strong>.
         </p>
 
         <form className={styles.form} onSubmit={onSubmit} noValidate>
@@ -155,7 +155,7 @@ export default function ContactSection({ projectTitles = [] }) {
               onChange={onChange}
               required
               rows={5}
-              placeholder="Descreva o que você precisa desenvolver."
+              placeholder="Ex.: hoje uso planilha para X, perco tempo com Y, gostaria de Z em até ___ meses."
               disabled={status === 'loading'}
             />
           </label>

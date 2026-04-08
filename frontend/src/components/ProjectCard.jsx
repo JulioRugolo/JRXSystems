@@ -2,17 +2,17 @@ import styles from './ProjectCard.module.css';
 
 const INSIGHTS = {
   jjtech:
-    'Pensado para o dia a dia da oficina: histórico por veículo, peças e serviços catalogados e orçamentos que o cliente acompanha no celular.',
+    'Ideal quando o carro “some” no meio do atendimento: tudo fica registrado e o orçamento chega claro no celular do cliente.',
   vagaprime:
-    'Conecta candidatos e recrutadores: formulários inteligentes, dados organizados e visão de pipeline para não perder talentos no meio do processo.',
+    'Para parar de caçar currículo na caixa de entrada: cada candidato num lugar só e a equipe enxerga em que etapa está.',
   'torres-veiculos':
-    'Experiência de vitrine moderna com busca por filtros e painel para equipe comercial atualizar estoque e mídias sem depender de terceiros.',
+    'Quem vende carro precisa de vitrine bonita e estoque atualizado — sem esperar dias para mudar preço ou foto.',
   '3dideas-erp':
-    'Une produção, pedidos e finanças para quem vive de impressão 3D: menos planilha solta, mais controle de fila, materiais e margem.',
+    'Quem imprime em 3D sente na pele: fila, material e dinheiro têm que conversar; aqui isso fica visível.',
   'sistema-agendamento':
-    'Foco em negócios que vendem horário: agenda clara para cliente e profissional, lembretes e pagamentos integrados ao fluxo.',
+    'Menos buraco na agenda e menos “esqueci”: cliente marca online e você cobra no ritmo certo.',
   'sistema-contas':
-    'Privacidade e clareza para finanças pessoais: categorias, metas e visão mensal em uma interface direta, com API segura por trás.',
+    'Para quem quer ver para onde vai o dinheiro sem virar contador: metas e mês a mês em linguagem simples.',
 };
 
 function MiniPreview({ slug }) {
@@ -196,7 +196,7 @@ export default function ProjectCard({ project }) {
         {insight ? <p className={styles.insight}>{insight}</p> : null}
         {stack ? (
           <div className={styles.stackWrap}>
-            <span className={styles.stackLabel}>Stack</span>
+            <span className={styles.stackLabel}>Destaques</span>
             <p className={styles.stack}>{stack}</p>
           </div>
         ) : null}
