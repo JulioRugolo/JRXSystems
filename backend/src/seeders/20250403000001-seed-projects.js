@@ -80,7 +80,7 @@ module.exports = {
           updated_at: now,
         },
       ],
-      {}
+      { ignoreDuplicates: true }
     );
   },
 
